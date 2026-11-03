@@ -17,8 +17,11 @@ $marks = array(
     "English" => 70
 );
 
+echo$marks["Physics"];
 echo$marks["Chemistry"];
+echo$marks["Biology"];
 echo$marks["Math"];
+echo$marks["English"];
 
 $total_marks = array_sum($marks);
 $average_marks = $total_marks / count($marks);
