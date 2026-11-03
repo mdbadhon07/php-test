@@ -9,14 +9,19 @@
 
 
 $name = "Badhon";
-$physics = 80;
-$chemistry = 85;
-$biology = 90;
-$math = 95;
-$english = 88;
+$marks = array(
+    "Physics" => 85,
+    "Chemistry" => 90,
+    "Biology" => 75,
+    "Math" => 80,
+    "English" => 70
+);
 
-$total_marks = $physics + $chemistry + $biology + $math + $english;
-$average_marks = $total_marks / 5;
+echo$marks["Chemistry"];
+echo$marks["Math"];
+
+$total_marks = array_sum($marks);
+$average_marks = $total_marks / count($marks);
 
 if ($average_marks >= 90) {
     $grade = "A+";
@@ -34,6 +39,12 @@ echo "Student Name: " . $name . "<br>";
 echo "Total Marks: " . $total_marks . "<br>";
 echo "Average: " . $average_marks . "<br>";
 echo "Grade: " . $grade . "<br>";
+
+
+
+
+
+
 
 
 
