@@ -57,4 +57,16 @@ switch (true) {
         echo "<style>h2 { color: black; }</style>";
 }
 
+for($i=1; $i<=100; $i++){
+    if($i % 2 ==0){
+        echo $i . "<br>";
+    }
+}
+
+for($i=1; $i<=100; $i++){
+    if($i % 5 ==0){
+        echo $i . "<br>";
+    }
+}
+
 ?>
