@@ -1,0 +1,72 @@
+
+-- School Management Database
+
+-- 1. Create Database
+CREATE DATABASE school_db;
+
+USE school_db;
+
+-- 2. Create Students Table
+CREATE TABLE students (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    age INT,
+    class VARCHAR(20),
+    phone VARCHAR(15)
+);
+
+-- 3. Create Teachers Table
+CREATE TABLE teachers (
+    teacher_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    subject VARCHAR(50),
+    phone VARCHAR(15)
+);
+
+-- 4. Create Subjects Table
+CREATE TABLE subjects (
+    subject_id INT AUTO_INCREMENT PRIMARY KEY,
+    subject_name VARCHAR(50),
+    teacher_id INT,
+    FOREIGN KEY (teacher_id)
+    REFERENCES teachers(teacher_id)
+);
+
+-- 5. Insert Student Data
+INSERT INTO students (name, age, class, phone)
+VALUES
+('Rahim', 15, 'Class 9', '01711111111'),
+('Karim', 16, 'Class 10', '01822222222'),
+('Sakib', 14, 'Class 8', '01933333333');
+
+-- 6. Insert Teacher Data
+INSERT INTO teachers (name, subject, phone)
+VALUES
+('Mr. Hasan', 'Mathematics', '01744444444'),
+('Mr. Karim', 'English', '01855555555'),
+('Ms. Fatema', 'Science', '01966666666');
+
+-- 7. Insert Subject Data
+INSERT INTO subjects (subject_name, teacher_id)
+VALUES
+('Mathematics', 1),
+('English', 2),
+('Science', 3);
+
+-- 8. Display All Students
+SELECT * FROM students;
+
+-- 9. Display All Teachers
+SELECT * FROM teachers;
+
+-- 10. Display All Subjects
+SELECT * FROM subjects;
+
+-- 11. Update Student Information
+UPDATE students
+SET age = 17
+WHERE student_id = 2;
+
+-- 12. Delete Student Information
+DELETE FROM students
+WHERE student_id = 3;
