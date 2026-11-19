@@ -109,9 +109,12 @@ $terms = isset($_POST['terms']) ? 1 : 0;
 $sql = "INSERT INTO user ( name, email, password, number)
 VALUES ( '$name', '$email', '$hashed_password', '$number')";
 
-mysqli_query($conn, $sql);
+if (mysqli_query($conn, $sql)) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 
-echo "New record created successfully";
 
 
 mysqli_close($conn);
